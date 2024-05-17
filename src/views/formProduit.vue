@@ -29,8 +29,8 @@
       </div>
 
       <button>Create Post</button>
-    </form>
-    <router-link to="/">Retour</router-link>
+    </form><br>
+  <button><router-link to="/product">Retour</router-link></button>
 
   <routerView /><br><br>
   </section>

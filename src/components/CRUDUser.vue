@@ -67,7 +67,8 @@ export default {
 </script>
 
 <template>
-  <section>
+  
+  <section class="full-height">
     <form @submit.prevent="editUser()" >
       <div>
         <label for="userId">Name: </label>
@@ -81,11 +82,17 @@ export default {
         <label for="body">Password: </label>
         <input type="password" name="password" id="password" v-model="users.password">
       </div>
-      
+      <br>
       <button>Edit User</button>
-    </form>
-    <router-link to="/product">Retour</router-link>
+      <br>
+    </form> <br>
+  <button><router-link to="/product">Retour</router-link></button>
 
   <routerView /><br><br>
   </section>
 </template>
+
+<style>
+
+
+</style>

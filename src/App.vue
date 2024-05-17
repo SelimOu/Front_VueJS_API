@@ -12,11 +12,11 @@ if (!isAuthenticated && route.path === '/product') {
 </script>
 
 <template>
-  <header>
+  
     
-    <router-link v-if="isAuthenticated" to="/product">Tous les Produits</router-link>
+   <button> <router-link v-if="isAuthenticated" to="/product">Tous les Produits</router-link></button>
     <router-view /><br><br>
-  </header>
+  
 </template>
 
 <style scoped>

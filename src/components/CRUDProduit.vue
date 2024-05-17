@@ -61,11 +61,8 @@ export default {
       localStorage.removeItem('token');
       this.$router.push('/login');
     },
-    filter() {
-    this.$nextTick(() => {
-      this.selectProduit;
-    });
-  }
+   
+  
   },
   
   computed: {
@@ -74,7 +71,7 @@ export default {
       return this.products;
     } else {
       return this.products.filter(product => {
-        return product.categorie_title.some(category => this.SelectedCate.includes(category));
+        return product.categorie_title.some(categorie => this.SelectedCate.includes(categorie));
       });
     }
   }
@@ -89,12 +86,12 @@ export default {
 </script>
 
 <template>
-  <header><RouterLink to="/login" v-on:click="logout()">Se déconnecter</RouterLink> <br></header>
+  <button><RouterLink to="/login" v-on:click="logout()">Se déconnecter</RouterLink></button> <br>
   <div>
     <div v-for="categorie in categories">
         
         <label for="categorie" >{{ categorie.title }}</label>
-        <input type="checkbox"  v-model="SelectedCate" :value="categorie.title"  @change="filter">
+        <input type="checkbox"  v-model="SelectedCate" :value="categorie.title"  >
       </div>
       
          <br><br>
@@ -120,3 +117,66 @@ export default {
     </ul>
   </div>
 </template>
+<style>
+div {
+  width: 100%;
+  
+  margin: 0 auto;
+  padding: 0 20px; 
+  box-sizing: border-box; 
+  display: flex; 
+  flex-direction: column; 
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 10px;
+  height: 100vh;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: #f7f7f7;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+</style>

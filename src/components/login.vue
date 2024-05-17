@@ -1,11 +1,13 @@
 <template>
     <div>
-        <router-link to="/">Home</router-link>
+        <button><router-link to="/">Home</router-link></button>
         <routerView /><br><br>
-        <h1>login</h1>
+        <h1>Se connecter</h1>
         <form @submit.prevent="login">
-            <input type="email" name="email" v-model="email">
-            <input type="password" name="password" v-model="password">
+            <label for="Username">Username: </label>
+            <input type="email" name="email" v-model="email"><br>
+            <label for="Password">Password: </label>
+            <input type="password" name="password" v-model="password"><br>
             <button type="submit">Se connecter</button>
         </form>
     </div>
@@ -38,3 +40,4 @@ export default {
     }
 }
 </script>
+
